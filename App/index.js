@@ -3,7 +3,8 @@ import Home from "./screens/Home";
 
 EStyleSheet.build({
   $gray: "#3D4441",
-  $white: "#fff"
+  $white: "#fff",
+  $lightGray: "#333333"
 });
 
 export default Home;

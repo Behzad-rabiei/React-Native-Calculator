@@ -1,9 +1,17 @@
 import React, { Component } from "react";
+import { SafeAreaView } from "react-native";
 import { Container } from "../component/Container";
+import { Result } from "../component/Text";
 
 class Home extends Component {
   render() {
-    return <Container />;
+    return (
+      <Container>
+        <SafeAreaView>
+          <Result />
+        </SafeAreaView>
+      </Container>
+    );
   }
 }
 

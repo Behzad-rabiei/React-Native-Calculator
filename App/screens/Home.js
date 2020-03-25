@@ -35,7 +35,7 @@ class Home extends Component {
             <Button text="+" />
           </Row>
           <Row>
-            <Button text="0" />
+            <Button text="0" size="Double" />
             <Button text="." />
             <Button text="=" />
           </Row>

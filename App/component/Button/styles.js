@@ -9,9 +9,15 @@ export default EStyleSheet.create({
     backgroundColor: "$lightGray",
     alignItems: "center",
     justifyContent: "center",
-    height: screen.width / 4 - 10,
-    borderRadius: screen.width / 4,
+    height: Math.floor(screen.width / 4 - 10),
+    borderRadius: Math.floor(screen.width / 4),
     margin: 5
+  },
+  buttonDouble: {
+    flex: 0,
+    width: screen.width / 2 - 10,
+    alignItems: "flex-start",
+    paddingLeft: 40
   },
   text: {
     fontSize: 20,

@@ -1,9 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Text } from "react-native";
 import styles from "./styles";
 
-const Result = () => {
-  return <Text style={styles.result}>100</Text>;
-};
+class Result extends Component {
+  render() {
+    const { currentValue } = this.props;
+    return <Text style={styles.result}>{currentValue}</Text>;
+  }
+}
 
-export default Result;
+const mapStateToProps = state => {
+  const { currentValue } = state;
+  return {
+    currentValue
+  };
+};
+export default connect(mapStateToProps)(Result);

@@ -1,4 +1,7 @@
+import React from "react";
+import { Provider } from "react-redux";
 import EStyleSheet from "react-native-extended-stylesheet";
+import store from "./config/store";
 import Home from "./screens/Home";
 
 EStyleSheet.build({
@@ -9,4 +12,10 @@ EStyleSheet.build({
   $lightslategrey: "#a6a6a6"
 });
 
-export default Home;
+export default () => {
+  return (
+    <Provider store={store}>
+      <Home />
+    </Provider>
+  );
+};

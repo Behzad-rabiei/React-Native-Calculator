@@ -4,7 +4,7 @@ export default EStyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "flex-end",
-    backgroundColor: "$gray"
+    backgroundColor: "$black"
   },
   row: {
     flexDirection: "row"

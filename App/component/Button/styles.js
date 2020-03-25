@@ -19,8 +19,17 @@ export default EStyleSheet.create({
     alignItems: "flex-start",
     paddingLeft: 40
   },
+  topButton: {
+    backgroundColor: "$lightslategrey"
+  },
+  rightButton: {
+    backgroundColor: "$royalblue"
+  },
   text: {
     fontSize: 20,
     color: "$white"
+  },
+  topText: {
+    color: "$black"
   }
 });

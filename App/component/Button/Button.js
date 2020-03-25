@@ -4,14 +4,21 @@ import styles from "./styles";
 
 class Button extends Component {
   render() {
-    const { text, size } = this.props;
+    const { text, size, theme } = this.props;
     const buttonStyle = [styles.button];
+    const textStyle = [styles.text];
     if (size === "Double") {
       buttonStyle.push(styles.buttonDouble);
     }
+    if (theme === "Top") {
+      buttonStyle.push(styles.topButton);
+      textStyle.push(styles.topText);
+    } else if (theme === "Right") {
+      buttonStyle.push(styles.rightButton);
+    }
     return (
       <TouchableOpacity style={buttonStyle}>
-        <Text style={styles.text}>{text}</Text>
+        <Text style={textStyle}>{text}</Text>
       </TouchableOpacity>
     );
   }

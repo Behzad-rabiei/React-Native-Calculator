@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { TouchableOpacity, Text } from "react-native";
 import styles from "./styles";
 
@@ -23,5 +24,10 @@ class Button extends Component {
     );
   }
 }
-
-export default Button;
+const mapStateToProps = state => {
+  const { currentValue } = state;
+  return {
+    currentValue
+  };
+};
+export default connect(mapStateToProps)(Button);

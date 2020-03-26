@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { TouchableOpacity, Text } from "react-native";
-import { setCurrentValue } from "../../actions/index";
+import {
+  setCurrentValue,
+  setPreviousValue,
+  setOperator,
+  clearValue
+} from "../../actions/index";
 import styles from "./styles";
 
 class Button extends Component {
@@ -12,14 +17,12 @@ class Button extends Component {
     if (size === "double") {
       buttonStyle.push(styles.buttonDouble);
     }
-
     if (theme === "top") {
       buttonStyle.push(styles.topButton);
       textStyle.push(styles.topText);
     } else if (theme === "right") {
       buttonStyle.push(styles.rightButton);
     }
-
     return {
       buttonStyle,
       textStyle
@@ -27,17 +30,38 @@ class Button extends Component {
   };
 
   handleOnPress = (value, type) => {
-    const { dispatch } = this.props;
-    dispatch(setCurrentValue(value));
+    const { dispatch, currentValue, previousValue, operator } = this.props;
 
     if (type === "number") {
-      // TODO:
-    }
-    if (type === "operator") {
-      // TODO:
+      dispatch(setCurrentValue(value));
+    } else if (type === "operator") {
+      dispatch(setOperator(value));
+      dispatch(setPreviousValue(currentValue));
+      dispatch(clearValue());
     } else if (type === "equal") {
-      // TODO:
+      const current = parseFloat(currentValue);
+      const previous = parseFloat(previousValue);
+      if (operator === "+") {
+        this.resetStates();
+        dispatch(setCurrentValue(current + previous));
+      } else if (operator === "-") {
+        this.resetStates();
+        dispatch(setCurrentValue(previous - current));
+      } else if (operator === "/") {
+        this.resetStates();
+        dispatch(setCurrentValue(previous / current));
+      } else if (operator === "x") {
+        this.resetStates();
+        dispatch(setCurrentValue(previous * current));
+      }
     }
+  };
+
+  resetStates = () => {
+    const { dispatch } = this.props;
+    dispatch(clearValue());
+    dispatch(setPreviousValue(null));
+    dispatch(setOperator(null));
   };
 
   render() {
@@ -54,9 +78,11 @@ class Button extends Component {
   }
 }
 const mapStateToProps = state => {
-  const { currentValue } = state;
+  const { currentValue, previousValue, operator } = state;
   return {
-    currentValue
+    currentValue,
+    previousValue,
+    operator
   };
 };
 export default connect(mapStateToProps)(Button);

@@ -11,33 +11,33 @@ class Home extends Component {
         <SafeAreaView>
           <Result />
           <Row>
-            <Button text="C" theme="Top" />
-            <Button text="+/-" theme="Top" />
-            <Button text="%" theme="Top" />
-            <Button text="/" theme="Right" />
+            <Button value="C" theme="Top" />
+            <Button value="+/-" theme="Top" />
+            <Button value="%" theme="Top" />
+            <Button value="/" theme="Right" />
           </Row>
           <Row>
-            <Button text="7" />
-            <Button text="8" />
-            <Button text="9" />
-            <Button text="x" theme="Right" />
+            <Button value="7" />
+            <Button value="8" />
+            <Button value="9" />
+            <Button value="x" theme="Right" />
           </Row>
           <Row>
-            <Button text="4" />
-            <Button text="5" />
-            <Button text="6" />
-            <Button text="-" theme="Right" />
+            <Button value="4" />
+            <Button value="5" />
+            <Button value="6" />
+            <Button value="-" theme="Right" />
           </Row>
           <Row>
-            <Button text="1" />
-            <Button text="2" />
-            <Button text="3" />
-            <Button text="+" theme="Right" />
+            <Button value="1" />
+            <Button value="2" />
+            <Button value="3" />
+            <Button value="+" theme="Right" />
           </Row>
           <Row>
-            <Button text="0" size="Double" />
-            <Button text="." />
-            <Button text="=" theme="Right" />
+            <Button value="0" size="Double" />
+            <Button value="." />
+            <Button value="=" theme="Right" />
           </Row>
         </SafeAreaView>
       </Container>

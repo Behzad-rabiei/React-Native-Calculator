@@ -6,7 +6,11 @@ import styles from "./styles";
 class Result extends Component {
   render() {
     const { currentValue } = this.props;
-    return <Text style={styles.result}>{currentValue}</Text>;
+    return (
+      <Text style={styles.result}>
+        {parseFloat(currentValue).toLocaleString()}
+      </Text>
+    );
   }
 }
 

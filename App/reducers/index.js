@@ -7,8 +7,13 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_CURRENT_VALUE: {
+      if (state.currentValue === "0") {
+        return {
+          currentValue: `${action.value}`
+        };
+      }
       return {
-        currentValue: action.value
+        currentValue: `${state.currentValue}${action.value}`
       };
     }
     default:

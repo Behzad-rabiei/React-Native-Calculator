@@ -1,7 +1,13 @@
-import { SET_CURRENT_VALUE } from "../actions/actionType";
+import {
+  SET_CURRENT_VALUE,
+  SET_PREVIOUS_VALUE,
+  SET_OPERATOR
+} from "../actions/actionType";
 
 const initialState = {
-  currentValue: "0"
+  currentValue: "0",
+  previousValue: null,
+  operator: null
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -14,6 +20,16 @@ const rootReducer = (state = initialState, action) => {
       }
       return {
         currentValue: `${state.currentValue}${action.value}`
+      };
+    }
+    case SET_PREVIOUS_VALUE: {
+      return {
+        previousValue: action.value
+      };
+    }
+    case SET_OPERATOR: {
+      return {
+        operator: action.value
       };
     }
     default:

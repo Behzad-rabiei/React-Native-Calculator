@@ -9,14 +9,14 @@ class Button extends Component {
     const { size, theme } = this.props;
     const buttonStyle = [styles.button];
     const textStyle = [styles.text];
-    if (size === "Double") {
+    if (size === "double") {
       buttonStyle.push(styles.buttonDouble);
     }
 
-    if (theme === "Top") {
+    if (theme === "top") {
       buttonStyle.push(styles.topButton);
       textStyle.push(styles.topText);
-    } else if (theme === "Right") {
+    } else if (theme === "right") {
       buttonStyle.push(styles.rightButton);
     }
 

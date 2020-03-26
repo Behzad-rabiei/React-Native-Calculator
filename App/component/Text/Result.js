@@ -14,6 +14,7 @@ class Result extends Component {
   }
 }
 
+// Read about toLocalString
 const mapStateToProps = state => {
   const { currentValue } = state;
   return {

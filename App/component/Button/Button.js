@@ -26,18 +26,27 @@ class Button extends Component {
     };
   };
 
-  handleOnPress = value => {
+  handleOnPress = (value, type) => {
     const { dispatch } = this.props;
     dispatch(setCurrentValue(value));
+
+    if (type === "number") {
+      // TODO:
+    }
+    if (type === "operator") {
+      // TODO:
+    } else if (type === "equal") {
+      // TODO:
+    }
   };
 
   render() {
-    const { value } = this.props;
+    const { value, type } = this.props;
     const { buttonStyle, textStyle } = this.theming();
     return (
       <TouchableOpacity
         style={buttonStyle}
-        onPress={() => this.handleOnPress(value)}
+        onPress={() => this.handleOnPress(value, type)}
       >
         <Text style={textStyle}>{value}</Text>
       </TouchableOpacity>

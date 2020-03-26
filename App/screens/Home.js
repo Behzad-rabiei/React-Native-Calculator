@@ -37,7 +37,7 @@ class Home extends Component {
           <Row>
             <Button value="0" type="number" size="double" />
             <Button value="." type="number" />
-            <Button value="=" type="operator" theme="right" />
+            <Button value="=" type="equal" theme="right" />
           </Row>
         </SafeAreaView>
       </Container>

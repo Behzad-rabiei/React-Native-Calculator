@@ -7,28 +7,9 @@ import {
   setOperator,
   clearValue
 } from "../../actions/index";
-import styles from "./styles";
+import { theming } from "../../util/themeButton";
 
 class Button extends Component {
-  theming = () => {
-    const { size, theme } = this.props;
-    const buttonStyle = [styles.button];
-    const textStyle = [styles.text];
-    if (size === "double") {
-      buttonStyle.push(styles.buttonDouble);
-    }
-    if (theme === "top") {
-      buttonStyle.push(styles.topButton);
-      textStyle.push(styles.topText);
-    } else if (theme === "right") {
-      buttonStyle.push(styles.rightButton);
-    }
-    return {
-      buttonStyle,
-      textStyle
-    };
-  };
-
   handleOnPress = (value, type) => {
     const { dispatch, currentValue, previousValue, operator } = this.props;
 
@@ -66,7 +47,7 @@ class Button extends Component {
 
   render() {
     const { value, type } = this.props;
-    const { buttonStyle, textStyle } = this.theming();
+    const { buttonStyle, textStyle } = theming(this.props);
     return (
       <TouchableOpacity
         style={buttonStyle}

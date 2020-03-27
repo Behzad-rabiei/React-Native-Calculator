@@ -1,7 +1,7 @@
-# React-Native-Timer
+# React-Native-Calculator
 
 A simple cross platform (iOS and Android) React Native Calculator App.
-Thanks to https://www.reactnativebyexample.com
+Thanks to Spencer Carli : https://learn.handlebarlabs.com
 
 ## Installation
 

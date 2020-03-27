@@ -41,6 +41,14 @@ export const handleEqual = (
     dispatch(setCurrentValue(previous * current));
   }
 };
+export const handlePosNeg = (dispatch, currentValue) => {
+  dispatch(clearValue());
+  dispatch(setCurrentValue(parseFloat(currentValue) * -1));
+};
+export const handlePercentage = (dispatch, currentValue) => {
+  dispatch(clearValue());
+  dispatch(setCurrentValue(parseFloat(currentValue) * 0.01));
+};
 
 export const calculator = props => {
   const {
@@ -63,6 +71,18 @@ export const calculator = props => {
     }
     case "equal": {
       handleEqual(dispatch, operator, currentValue, previousValue);
+      break;
+    }
+    case "clear": {
+      resetStates(dispatch);
+      break;
+    }
+    case "posNeg": {
+      handlePosNeg(dispatch, currentValue);
+      break;
+    }
+    case "percentage": {
+      handlePercentage(dispatch, currentValue);
       break;
     }
     default:

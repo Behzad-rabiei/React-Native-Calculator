@@ -11,9 +11,9 @@ class Home extends Component {
         <SafeAreaView>
           <Result />
           <Row>
-            <Button value="C" type="operator" theme="top" />
-            <Button value="+/-" type="operator" theme="top" />
-            <Button value="%" type="operator" theme="top" />
+            <Button value="C" type="clear" theme="top" />
+            <Button value="+/-" type="posNeg" theme="top" />
+            <Button value="%" type="percentage" theme="top" />
             <Button value="/" type="operator" theme="right" />
           </Row>
           <Row>
